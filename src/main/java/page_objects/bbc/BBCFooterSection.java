@@ -12,7 +12,7 @@ import page_objects.BasePageObject;
  */
 public class BBCFooterSection extends BasePageObject {
 
-    @FindBy(css = ".orb-footer-inner a[href='/terms/']")
+    @FindBy(css = ".orb-footer-inner a[href*='/terms/']")
     WebElement termsAndConditionsLink;
 
     public BBCFooterSection(WebDriver driver) {
