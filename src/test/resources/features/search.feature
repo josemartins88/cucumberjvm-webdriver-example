@@ -5,4 +5,4 @@ Feature: As a viewer of the BBC webpage I should be able to search for news on t
     Given I am on the BBC main page
     Then I can see the terms and conditions link in the footer
     When I search for "London"
-    Then I can still see the terms and conditions link in the footer
+    Then I can see results on the search page

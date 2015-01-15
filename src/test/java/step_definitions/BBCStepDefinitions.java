@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.support.PageFactory;
 import page_objects.bbc.BBCMainPage;
+import page_objects.bbc.BBCSearchResultsPage;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,5 +29,12 @@ public class BBCStepDefinitions {
     public void I_search_for(String searchTerm) throws Throwable {
         BBCMainPage bbcMainPage = PageFactory.initElements(BaseWebDriverStepDefinitions.driver, BBCMainPage.class);
         bbcMainPage.searchFor(searchTerm);
+    }
+
+    @Then("^I can see results on the search page$")
+    public void I_can_see_results_on_the_search_page() throws Throwable {
+        BBCSearchResultsPage bbcSearchResultsPage =
+                PageFactory.initElements(BaseWebDriverStepDefinitions.driver, BBCSearchResultsPage.class);
+        assert bbcSearchResultsPage.isSearchResultsContainerVisible();
     }
 }
