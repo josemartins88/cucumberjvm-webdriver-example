@@ -7,28 +7,33 @@ This contains a scenario for demo purposes with the BBC webpage.
 ## How to run the tests:
 To run the full suite locally you should have a selenium grid hub and at least one node running on your machine.
 To do that follow the steps below:
-1. Download the most recent selenium server (http://www.seleniumhq.org/download/)
-2. Download ChromeDriver (https://sites.google.com/a/chromium.org/chromedriver/downloads)
-3. Start the selenium grid hub locally (change the selenium-server version as needed)
+
+- Download the most recent selenium server (http://www.seleniumhq.org/download/)
+
+- Download ChromeDriver (https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
+- Start the selenium grid hub locally (change the selenium-server version as needed)
 ```bash
-java -jar selenium-server-standalone-2.44.0.jar -role hub
+   java -jar selenium-server-standalone-2.44.0.jar -role hub
 ```
-4. Start a selenium grid node locally
+
+- Start a selenium grid node locally
 ```bash
 java -jar selenium-server-standalone-2.44.0.jar -role node  -hub http://localhost:4444/grid/register -Dwebdriver.chrome.driver='chrome driver path'
 ```
-5. Run in the project directory
+
+- Run in the project directory
 ```bash
 mvn clean test
 ```
 
 ## Structure
 
-- *test/resources/features*:
+- **test/resources/features**:
 Contains all the feature files written in gherkin syntax. It is possible to specify which scenarios or features are
 browser based by adding a '@webdriver' tag to it.
 
-- *test/resources/config*:
+- **test/resources/config**:
 This package contains the configuration files such as WebDriver properties. In that file is possible to specify the
 address and port where the selenium hub is running and which browser should be used.
 
